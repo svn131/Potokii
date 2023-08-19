@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class MenejerPotokov {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         long startTime = System.currentTimeMillis();
 
         int length = 1000;
@@ -105,11 +105,9 @@ public class MenejerPotokov {
         });
 
         executorService.shutdown();
-        try {
+
             executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
 
         long endTime = System.currentTimeMillis();
         long executionTime = endTime - startTime;
@@ -117,3 +115,4 @@ public class MenejerPotokov {
         System.out.println(executionTime + " миллисекунд");
     }
 }
+//    В этом примере мы используем ExecutorService и его метод submit() для отправки задач на выполнение в пуле потоков. Метод awaitTermination() ждет завершения всех задач в пуле потоков. Затем мы рассчитываем время выполнения и выводим его на консоль. Обратите внимание, что вам не нужно явно вызывать метод start() и join() для потоков - это управляется ExecutorService.
