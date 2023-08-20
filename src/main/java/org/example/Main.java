@@ -112,14 +112,12 @@ public class Main {
         thread3.start();
         thread4.start();
 
-        try {
+
             thread1.join();
             thread2.join();
             thread3.join();
             thread4.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
 
         long endTime = System.currentTimeMillis();
         long executionTime = endTime - startTime;
