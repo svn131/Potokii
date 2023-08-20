@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.concurrent.Semaphore;
 
-public class Simoforsss {
+public class SimoforsssCar {
     //Парковочное место занято - true, свободно - false
     private static final boolean[] PARKING_PLACES = new boolean[5];
     //Устанавливаем флаг "справедливый", в таком случае метод
