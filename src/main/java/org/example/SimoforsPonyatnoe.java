@@ -7,7 +7,7 @@ public class SimoforsPonyatnoe {
 
 
         public static void main(String[] args) {
-            Semaphore mySemaphore = new Semaphore(2); // Создаем семафор с 2 разрешениями
+            Semaphore mySemaphore = new Semaphore(1); // Создаем семафор с 2 разрешениями
 
             // Поток A
             Thread threadA = new Thread(() -> {

@@ -4,13 +4,18 @@ public class AiBiC {
 
         public static void main(String[] args) throws InterruptedException {
             Object lock = new Object();
+            Object lock1 = new Object();
+            Integer u = Integer.valueOf(500);
+            Integer ee = Integer.valueOf(500);
+
+//            ee.wait();
 
             // Поток A
             Thread threadA = new Thread(() -> {
-                synchronized (lock) {
+                synchronized (u) {
                     try {
                         System.out.println("Поток A ожидает");
-                        lock.wait(); // Приостановка потока A
+                        u.wait(); // Приостановка потока A
                         System.out.println("Поток A возобновлен");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -20,10 +25,10 @@ public class AiBiC {
 
             // Поток B
             Thread threadB = new Thread(() -> {
-                synchronized (lock) {
+                synchronized (u) {
                     try {
                         System.out.println("Поток B ожидает");
-                        lock.wait(); // Приостановка потока B
+                        u.wait(); // Приостановка потока B
                         System.out.println("Поток B возобновлен");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -33,9 +38,10 @@ public class AiBiC {
 
             // Поток C
             Thread threadC = new Thread(() -> {
-                synchronized (lock) {
+                synchronized (u) {
                     System.out.println("Поток C запущен");
-                    lock.notifyAll(); // Возобновление всех потоков, ожидающих на объекте lock
+//                    lock.notifyAll(); // Возобновление всех потоков, ожидающих на объекте lock
+                    u.notifyAll();
                 }
             });
 
