@@ -15,8 +15,6 @@ public class WaitNotify111 {
         Thread thread1 = new Thread(() -> {
             synchronized (lock) {
                 System.out.println("11111111");
-
-
                 for (int i = 0; i < length / 4; i++) {
                     if(i % 2 == 0) {
                         for (int y = 0; y < 10000000; y++) {
@@ -39,7 +37,16 @@ public class WaitNotify111 {
                 }
 
                 lock.notifyAll();
+
+                try {
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.println("PPPPPPPPPPPPPPPPPPPPPPP");
+
             }
+
         });
 
         Thread thread2 = new Thread(() -> {
@@ -162,9 +169,13 @@ public class WaitNotify111 {
         System.out.println("777777777777777777777777777");
 
         thread1.join();
+        System.out.println("Первый поток закончился");
         thread2.join();
+        System.out.println("Второй поток закончился");
         thread3.join();
+        System.out.println("Трей поток закончился");
         thread4.join();
+        System.out.println("четвертый поток закончился");
 
         System.out.println("88888888888888888888888888");
         long endTime = System.currentTimeMillis();
@@ -172,6 +183,10 @@ public class WaitNotify111 {
 
         System.out.println(executionTime + " миллисекунд");
     }
+
 }
+
+
+
 
 //В данном примере потоки выполняються поочередно

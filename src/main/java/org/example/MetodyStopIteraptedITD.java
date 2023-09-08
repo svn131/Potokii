@@ -1,6 +1,6 @@
 package org.example;
 
-public class MetodyStopITD {
+public class MetodyStopIteraptedITD {
 
     public static void main(String[] args) {
         Thread thread = new Thread(() -> {

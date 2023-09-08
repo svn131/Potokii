@@ -8,13 +8,13 @@ public class RaceConditoin {
         public static void main(String[] args) {
             Thread thread1 = new Thread(() -> {
                 for (int i = 0; i < 100000; i++) {
-                    counter++;
+                    counter++; //@todo он допустим взял counter коогда он был 5 и затем добавил 1 и стал каунтер 6
                 }
             });
 
             Thread thread2 = new Thread(() -> {
                 for (int i = 0; i < 100000; i++) {
-                    counter++;
+                    counter++; //@todo это тоже взял ее когда она была 5 и так же добавил ей 1 и она стала 6 в итоге оба инкремента прибавили всего 1
                 }
             });
 
