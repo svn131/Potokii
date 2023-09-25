@@ -20,7 +20,7 @@ public class VolotileRealPrimer {
         Thread thread1 = new Thread(() -> {
             System.out.println("Поток 1 начал работу");
             while (!example.flag) {
-                // Ожидание, пока флаг не станет true
+                // Ожидание, пока флаг не станет true до этого времени поток просто крутит пустой цикл из которого не может выйти
             }
             System.out.println("Поток 1 завершил работу");
         });
