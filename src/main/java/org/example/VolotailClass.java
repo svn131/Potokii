@@ -85,9 +85,8 @@ public class VolotailClass {
 
 
 
-        private AtomicInteger counter = new AtomicInteger(0);
-//    int counter;
-
+  //      private AtomicInteger counter = new AtomicInteger(0);
+        volatile  int counter = 0;
         public static void main(String[] args) {
             VolotailClass main = new VolotailClass();
 
@@ -115,17 +114,17 @@ public class VolotailClass {
 
             System.out.println("Counter value: " + main.getCounter());
         }
-
-      private void incrementCounter() {
+    // synchronized
+      private  void incrementCounter() {
 
           System.out.println(Thread.currentThread().getName());
-            counter.incrementAndGet();
-//          counter++;
+
+        counter++;
         }
 
       private  int getCounter() {
-            return counter.get();
-//          return counter;
+
+        return counter;
         }
     }
 
