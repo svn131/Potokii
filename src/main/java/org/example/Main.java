@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+    public Object run;
+
     public static void main(String[] args) throws InterruptedException {
 
 
@@ -112,11 +114,10 @@ public class Main {
         thread3.start();
         thread4.start();
 
-
             thread1.join();
             thread2.join();
             thread3.join();
-            thread4.join();
+             thread4.join();
 
 
         long endTime = System.currentTimeMillis();

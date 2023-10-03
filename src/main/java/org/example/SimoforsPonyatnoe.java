@@ -12,7 +12,7 @@ public class SimoforsPonyatnoe {
             // Поток A
             Thread threadA = new Thread(() -> {
                 try {
-                    mySemaphore.acquire(); // Запрашиваем разрешение у семафора
+                    mySemaphore.acquire(); // Запрашиваем разрешение у семафора эскваер
                     System.out.println("Поток A получил разрешение");
                     Thread.sleep(2000); // Выполняем некоторую работу (2 секунды)
                 } catch (InterruptedException e) {

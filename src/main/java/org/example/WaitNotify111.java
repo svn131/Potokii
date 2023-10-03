@@ -10,10 +10,10 @@ public class WaitNotify111 {
         int length = 1000;
         Integer[] array = new Integer[length];
 
-        Object lock = new Object();
+        Object cat = new Object();
 
         Thread thread1 = new Thread(() -> {
-            synchronized (lock) {
+            synchronized (cat) {
                 System.out.println("11111111");
                 for (int i = 0; i < length / 4; i++) {
                     if(i % 2 == 0) {
@@ -36,10 +36,10 @@ public class WaitNotify111 {
                     }
                 }
 
-                lock.notifyAll();
+                cat.notifyAll();
 
                 try {
-                    lock.wait();
+                    cat.wait();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -50,7 +50,7 @@ public class WaitNotify111 {
         });
 
         Thread thread2 = new Thread(() -> {
-            synchronized (lock) {
+            synchronized (cat) {
                 System.out.println("2222222222222222222222");
 
 
@@ -74,12 +74,12 @@ public class WaitNotify111 {
                         }
                     }
                 }
-                lock.notifyAll();
+                cat.notifyAll();
             }
         });
 
         Thread thread3 = new Thread(() -> {
-            synchronized (lock) {
+            synchronized (cat) {
                 System.out.println("3333333333333333333333");
 
                 for (int i = length / 2; i < length * 3 / 4; i++) {
@@ -101,12 +101,12 @@ public class WaitNotify111 {
                         }
                     }
                 }
-                lock.notifyAll();
+                cat.notifyAll();
             }
         });
 
         Thread thread4 = new Thread(() -> {
-            synchronized (lock) {
+            synchronized (cat) {
                 System.out.println("4444444444");
 
                 for (int i = length * 3 / 4; i < length; i++) {
@@ -129,21 +129,21 @@ public class WaitNotify111 {
                     }
                 }
 
-                lock.notifyAll();
+                cat.notifyAll();
             }
         });
 
         thread1.start();
 
-        synchronized (lock) {
-            lock.wait(1000000);
+        synchronized (cat) {
+            cat.wait(1000000);
         }
 
 
         thread2.start();
 
-        synchronized (lock) {
-            lock.wait(1000000);
+        synchronized (cat) {
+            cat.wait(1000000);
 
 
         thread3.start();
@@ -152,8 +152,8 @@ public class WaitNotify111 {
 
         }
 
-        synchronized (lock) {
-            lock.wait(1000000);
+        synchronized (cat) {
+            cat.wait(1000000);
         }
 
         thread4.start();
@@ -163,8 +163,8 @@ public class WaitNotify111 {
 //        }
         System.out.println("star234");
 
-        synchronized (lock) {
-            lock.notifyAll();
+        synchronized (cat) {
+            cat.notifyAll();
         }
         System.out.println("777777777777777777777777777");
 

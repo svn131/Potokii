@@ -19,7 +19,13 @@ public class VolotileRealPrimer {
         // Поток 1
         Thread thread1 = new Thread(() -> {
             System.out.println("Поток 1 начал работу");
+//            try {
+//                thread2.join();
+//            } catch (Exception e) {
+//                throw new RuntimeException(e);
+//            }
             while (!example.flag) {
+
                 // Ожидание, пока флаг не станет true до этого времени поток просто крутит пустой цикл из которого не может выйти
             }
             System.out.println("Поток 1 завершил работу");
@@ -29,6 +35,7 @@ public class VolotileRealPrimer {
         Thread thread2 = new Thread(() -> {
             System.out.println("Поток 2 начал работу");
             try {
+//            thread1.join();
                 Thread.sleep(2000); // Задержка на 2 секунды
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -37,8 +44,9 @@ public class VolotileRealPrimer {
             System.out.println("Поток 2 изменил флаг");
         });
 
-        thread1.start();
+
         thread2.start();
+        thread1.start();
     }
 
 
