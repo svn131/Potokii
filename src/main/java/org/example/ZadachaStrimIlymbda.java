@@ -82,6 +82,7 @@ public class ZadachaStrimIlymbda {
                 kordinata.put(x, y);
                 kordinatyOstrova.add(kordinata);
             }
+
         }
     }
 
