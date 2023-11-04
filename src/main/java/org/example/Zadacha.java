@@ -23,33 +23,7 @@ public class Zadacha {
         dvuhMasiv[2] = new int[]{1, 1, 0, 0, 0};
         dvuhMasiv[3] = new int[]{0, 0, 0, 0, 0};
 
-//        dvuhMasiv[0][0]= 1;
-//        dvuhMasiv[0][1]= 1;
-//        dvuhMasiv[0][2]= 1;
-//        dvuhMasiv[0][3]= 1;
-//        dvuhMasiv[0][4]= 0;
-//
-//
-//        dvuhMasiv[1][0]= 1;
-//        dvuhMasiv[1][1]= 1;
-//        dvuhMasiv[1][2]= 0;
-//        dvuhMasiv[1][3]= 1;
-//        dvuhMasiv[1][4]= 0;
-//
-//
-//        dvuhMasiv[2][0]= 1;
-//        dvuhMasiv[2][1]= 1;
-//        dvuhMasiv[2][2]= 0;
-//        dvuhMasiv[2][3]= 0;
-//        dvuhMasiv[2][4]= 0;
-//
-//
-//
-//        dvuhMasiv[3][0]= 0;
-//        dvuhMasiv[3][1]= 0;
-//        dvuhMasiv[3][2]= 0;
-//        dvuhMasiv[3][3]= 0;
-//        dvuhMasiv[3][4]= 0;
+
 
         vicheslenya(dvuhMasiv);
 
@@ -134,11 +108,9 @@ public class Zadacha {
         }
 
 
-        public List<Map<Integer, Integer>> getKordinatyOstrova() {  // todo MyCuncarent
+        public List<Map<Integer, Integer>> getKordinatyOstrova() {  // todo My Cuncarent
 
-//            List<Map<Integer,Integer>> kordinatyOstrovaVer1 =  new ArrayList<>();
-//
-//            kordinatyOstrovaVer1.addAll(kordinatyOstrova);
+
 
              return new ArrayList<>(kordinatyOstrova);
         }
